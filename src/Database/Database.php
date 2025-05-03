@@ -29,6 +29,8 @@ use Utopia\Database\Validator\Permissions;
 use Utopia\Database\Validator\Queries\Document as DocumentValidator;
 use Utopia\Database\Validator\Queries\Documents as DocumentsValidator;
 use Utopia\Database\Validator\Structure;
+use Utopia\CLI\Console;
+
 
 class Database
 {
@@ -2943,7 +2945,7 @@ class Database
      */
     public function getDocument(string $collection, string $id, array $queries = [], bool $forUpdate = false): Document
     {
-        print "Hello from getDocument\n";
+        Console::log(print_r("Hello from getDocument", true));
         if ($collection === self::METADATA && $id === self::METADATA) {
             return new Document(self::COLLECTION);
         }
