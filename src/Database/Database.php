@@ -2946,6 +2946,7 @@ class Database
     public function getDocument(string $collection, string $id, array $queries = [], bool $forUpdate = false): Document
     {
         Console::log(print_r("Hello from getDocument", true));
+        print "Trying something news"
         if ($collection === self::METADATA && $id === self::METADATA) {
             return new Document(self::COLLECTION);
         }
